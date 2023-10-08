@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container
+{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #98c1d2, #15908e);
+}
+
+.calculator
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(111, 190, 196);
+    padding : 30px;
+    border-radius: 10px;
+}
+.calculator form input
+{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.1), 
+    5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px ;
+    color:white;
+    cursor:pointer;
+    margin: 10px;
+}
+
+form .display
+{
+    display:flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .display input
+{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+
+form input.equal
+{
+    width : 145px ;
+    color: #000000;
+}
+
+form input.operator
+{
+    color: #000000;
+}
+
+.box 
+{
+    width: 200px;
+    height: 580px;
+    background-color: #b6caf3;
+    border: 2px solid #756deb;
+    padding: 15px; 
+    justify-content: flex-start;
+}
+
+#history
+{
+    display: none;
+    width: 240px;
+    height: 630px;
+    overflow-y: scroll;
+    font-size: 0.9cm;
+    background-color: rgb(111, 195, 196);
+    border: 2px solid #15908e;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#history::-webkit-scrollbar
+{
+    width: 0;
+}
+
+#history h3
+{
+    padding: 10px 0px;
+    font-size: 1.2cm;
+}
+
+#history p:last-child
+{
+    font-size: 0.9cm;
+    font-weight: 500;
+    color: #15908e;
+}
+.button
+{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(111, 195, 196);
+    border: 2px solid #15908e;
+    padding: 15px; 
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: auto;
+}

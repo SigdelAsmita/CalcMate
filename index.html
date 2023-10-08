@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset ="UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+    <title>
+        CalcMate
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="calculator">
+        <form >
+            <div class="display">
+                <input type = "text" name = "display">
+            </div>
+            <div>
+                <input type = "button" value = "AC" onclick="display.value = ''" class ="operator">
+                <input type = "button" value = "DEL" 
+                onclick="display.value = display.value.toString().slice(0,-1)" class ="operator">
+                <input type = "button" value = "." onclick="display.value += '.'" class ="operator">
+                <input type = "button" value = "/" onclick="display.value += '/'" class ="operator">
+            </div>
+
+            <div>
+                <input type = "button" value = "7" onclick="display.value += '7'">
+                <input type = "button" value = "8" onclick="display.value += '8'">
+                <input type = "button" value = "9" onclick="display.value += '9'">
+                <input type = "button" value = "*" onclick="display.value += '*'" class ="operator">
+            </div>
+
+            <div>
+                <input type = "button" value = "4" onclick="display.value += '4'">
+                <input type = "button" value = "5" onclick="display.value += '5'">
+                <input type = "button" value = "6" onclick="display.value += '6'">
+                <input type = "button" value = "-" onclick="display.value += '-'" class ="operator">
+            </div>
+
+            <div>
+                <input type = "button" value = "1" onclick="display.value += '1'">
+                <input type = "button" value = "2" onclick="display.value += '2'">
+                <input type = "button" value = "3" onclick="display.value += '3'">
+                <input type = "button" value = "+" onclick="display.value += '+'" class ="operator">
+            </div>
+
+            <div>
+                <input type = "button" value = "00" onclick="display.value += '00'">
+                <input type = "button" value = "0" onclick="display.value += '0'">
+                <input type = "button" value = "=" onclick="display.value = calculation(display.value)" class="equal" >
+            </div>
+        </form>
+        <button id="HistoryButton" class ="button">
+            <h3>History</h3>
+        </button>
+    </div>
+    
+    
+    <div id="history" >
+        <h3>History</h3>
+    </div>
+    
+    <script type = "text/javascript">
+        let historyDiv = document.getElementById('history');
+        let isHistoryVisible = false;
+        function toggleHistory() {
+        if (isHistoryVisible) {
+            historyDiv.style.display = 'none';
+            isHistoryVisible = false;
+        } else {
+            historyDiv.style.display = 'block';
+            isHistoryVisible = true;
+        }
+    }
+
+    let historyButton = document.getElementById('HistoryButton');
+    historyButton.addEventListener('click', toggleHistory);
+    function calculation(v)
+    {
+        let para = document.createElement('p');
+        let result = eval(v);
+        let data = v + "=" + result;
+        para.innerText = data;
+        historyDiv.appendChild(para);
+        return result;
+    }
+    </script>  
+</div>
+</body>
+</html>
